@@ -86,7 +86,7 @@ function handleImageError(index) {
 }
 
 function obtenerProductos() {
-  fetch('http://localhost:4000/api/items', {
+  fetch(import.meta.env.VITE_URL_API + '/api/items', {
     headers: {
       method: 'GET',
     }
@@ -107,7 +107,7 @@ function formatPrice(value) {
 function initiatePayment(details) {
   const paymentDetails = details
 
-  fetch('http://localhost:4000/api/pagos/iniciar', {
+  fetch(import.meta.env.VITE_URL_API + '/api/pagos/iniciar', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
